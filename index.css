@@ -1,0 +1,152 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8vh repeat(3, 1fr);
+  grid-template-areas:
+    "nav"
+    "welcome"
+    "projects"
+    "footer";
+  font-family: Arial, sans-serif;
+  grid-gap: 2em;
+}
+
+#navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  grid-area: nav;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #f2f2f2;
+  padding: 1em;
+}
+
+footer a {
+  font-size: 1.2em;
+  font-weight: lighter;
+  text-decoration: none;
+  color: purple;
+  display: block;
+}
+
+#navbar a {
+  position: relative;
+  font-size: 1.2em;
+  font-weight: lighter;
+  text-decoration: none;
+  color: purple;
+  margin-right: 1em;
+}
+
+/* effects on links */
+
+#navbar a:hover {
+  animation-name: sweep;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  color: orange;
+}
+
+@keyframes sweep {
+  25% {
+    left: -0.05em;
+  }
+
+  50% {
+    left: -0.1em;
+  }
+
+  75% {
+    left: -0.15em;
+  }
+
+  100% {
+    left: -0.2em;
+  }
+}
+
+#profile-link {
+  justify-self: flex-start;
+}
+
+/* *************************************************************** */
+
+/* welcome */
+
+#welcome-section {
+  height: 100vh;
+  grid-area: welcome;
+  text-align: center;
+  font-family: monospace;
+  color: #fdfdfd;
+  font-style: italic;
+  background: url("https://images.alphacoders.com/381/thumb-1920-38153.jpg");
+}
+
+#welcome-section h1 {
+  font-size: 5.5em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-tile p {
+  background-color: #7f7f7f;
+  color: white;
+  align-self: stretch;
+  padding: 0.5em;
+}
+
+#welcome-section p {
+  font-size: 3.7em;
+  font-weight: lighter;
+}
+
+/* ******************************************************************************* */
+
+/* projects */
+
+#projects {
+  grid-area: projects;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  width: 15em;
+  height: 20em;
+  background-color: #f9f9f9;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.project-tile img {
+  width: 13em;
+  height: 17em;
+  display: block;
+}
+
+/* **************************************************************** */
+
+/* footer */
+
+footer {
+  grid-area: footer;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+@media (max-width: 600px) {
+  #welcome-section h1 {
+    font-size: 3em;
+  }
+
+  #welcome-section p {
+    font-size: 2em;
+  }
+}
